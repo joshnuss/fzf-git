@@ -1,0 +1,48 @@
+#!/bin/bash
+# FZF/GIT hybrid
+case "$1" in
+  add)
+    files=$(git ls-files . --modified --exclude-standard --others | fzf --multi --header "git add ${@:2} <paths>")
+    git add "${@:2}" $files
+    ;;
+
+  mv)
+    source=$(git ls-files . --cached --modified --exclude-standard --others | fzf --header "git mv ${@:2} <source>")
+    read -p "destination: " destination
+    git mv $source $destination "${@:2}"
+    ;;
+
+  rm)
+    source=$(git ls-files . --cached --modified --exclude-standard | fzf --multi --header "git rm ${@:2} <paths>")
+    git rm $source "${@:2}"
+    ;;
+
+  reset)
+    source=$(git diff --staged --name-only | fzf --multi --header "git reset ${@:2} <files>")
+    git reset $2 $source "${@:3}"
+    ;;
+
+  checkout)
+    branch=$({ git for-each-ref --format='%(refname:short)' refs/heads/*; git tag --list; } | fzf --header "git checkout ${@:2} <branch>")
+    git checkout "${@:2}" $branch
+    ;;
+
+  rebase)
+    branch=$(git for-each-ref --format='%(refname:short)' refs/heads/* | fzf --header "git rebase ${@:2} <branch>")
+    git rebase "${@:2}" $branch
+    ;;
+
+  merge)
+    branch=$(git for-each-ref --format='%(refname:short)' refs/heads/* | fzf --header "git merge ${@:2} <branch>")
+    git merge "${@:2}" $branch
+    ;;
+
+  show)
+    commit=$(git log --oneline | fzf --header "git show ${@:2} <branch>")
+    git show "${@:2}" ${commit:0:7}
+    ;;
+
+  *)
+    # everything else just use `git` directly
+    git $@
+esac
