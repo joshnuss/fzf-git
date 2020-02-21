@@ -6,14 +6,14 @@
 
 ## Supported commands
 
-- `git add`
-- `git mv`
-- `git rm`
-- `git reset`
-- `git checkout`
-- `git rebase`
-- `git merge`
-- `git show`
+- `fzgit add`
+- `fzgit mv`
+- `fzgit rm`
+- `fzgit reset`
+- `fzgit checkout`
+- `fzgit rebase`
+- `fzgit merge`
+- `fzgit show`
 
 All other commands are sent directly to `git`
 
