@@ -1,4 +1,4 @@
-# fzgit
+# fzf-git
 
 **ALPHA SOFTWARE**
 
@@ -6,14 +6,14 @@
 
 ## Supported commands
 
-- `fzgit add`
-- `fzgit mv`
-- `fzgit rm`
-- `fzgit reset`
-- `fzgit checkout`
-- `fzgit rebase`
-- `fzgit merge`
-- `fzgit show`
+- `fzf-git add`
+- `fzf-git mv`
+- `fzf-git rm`
+- `fzf-git reset`
+- `fzf-git checkout`
+- `fzf-git rebase`
+- `fzf-git merge`
+- `fzf-git show`
 
 All other commands are sent directly to `git`
 
