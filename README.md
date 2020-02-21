@@ -1,8 +1,10 @@
-# FzF / GIT command
-
-Supercharge `git` with `fzf`. Provides autocomplete for paths and branch.
+# fzgit
 
 **ALPHA SOFTWARE**
+
+A `git` command alternative powered by `fzf`.
+
+It provides autocomplete for paths and branch.
 
 ## Supported commands
 
@@ -15,7 +17,7 @@ Supercharge `git` with `fzf`. Provides autocomplete for paths and branch.
 - `git merge`
 - `git show`
 
-Any other commands is sent directly to `git`
+All other commands are sent directly to `git`
 
 # License
 
