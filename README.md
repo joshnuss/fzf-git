@@ -2,9 +2,7 @@
 
 **ALPHA SOFTWARE**
 
-A `git` command alternative powered by `fzf`.
-
-It provides autocomplete for paths and branch.
+`git` powered by `fzf`. Provides autocomplete for paths and branch.
 
 ## Supported commands
 
